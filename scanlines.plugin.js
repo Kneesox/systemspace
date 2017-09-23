@@ -1,4 +1,4 @@
-//META{"name":"BlurNSFW"}*//
+//META{"name":"Systemspace scanlines"}*//
 
 var BlurNSFW = (function() {
 
