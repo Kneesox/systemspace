@@ -1,6 +1,6 @@
-//META{"name":"BlurNSFW"}*//
+//META{"name":"ScanLines"}*//
 
-var BlurNSFW = (function() {
+var ScanLines = (function() {
 
 class Plugin {
 	getName(){return "Systemspace Scanlines"}
