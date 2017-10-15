@@ -1,16 +1,26 @@
-//META{"name":"ScanLines"}*//
+//META{"name":"Scanlines"}*//
 
-var ScanLines = (function() {
+var Scanlines = (function() {
 
-class Plugin {
-	getName(){return "Systemspace Scanlines"}
-	getShortName() {return "sssl"}
-	getDescription(){return "Add's the systemspace scanlines too your discord."}
-	getVersion(){return "0.3"}
-	getAuthor(){return "Kneesox"}
+  class Plugin {
+    getName() {
+      return "Systemspace Scanlines"
+    }
+    getShortName() {
+      return "sssl"
+    }
+    getDescription() {
+      return "Add's the systemspace scanlines too your discord."
+    }
+    getVersion() {
+      return "0.3"
+    }
+    getAuthor() {
+      return "Kneesox"
+    }
 
-	constructor() {
-		this.style = `/* Scanlines */
+    constructor() {
+      this.style = `/* Scanlines */
 
       #overlay {
           position: fixed;
@@ -20,7 +30,7 @@ class Plugin {
           height: 100%;
           pointer-events: none;
           z-index: 1000;
-          background-image: url(https://systemspace.network/res/images/static/overlay.png);
+          background-image: url(https://systemspace.network/res/images/ui/static/overlay.png);
           background-repeat: all;
           background-position: 0px 0px;
 
@@ -45,7 +55,7 @@ class Plugin {
           height: 100%;
           pointer-events: none;
           z-index: 1000;
-          background-image: url(https://systemspace.network/res/images/static/overlay2.png);
+          background-image: url(https://systemspace.network/res/images/ui/static/overlay2.png);
           background-repeat: all;
           background-position: 0px 0px;
 
@@ -54,29 +64,29 @@ class Plugin {
           animation-iteration-count: infinite;
           animation-timing-function: steps(4);
       }`
-	}
+    }
 
 
 
-  load(){
+    load() {
 
-	}
+    }
 
-  start(){
-    BdApi.injectCSS(this.getShortName(), this.style);
-		const divs = $(`<div id="overlay"></div><div id="overlay2"></div>`);
-    $("body").append(divs);
-  }
+    start() {
+      BdApi.injectCSS(this.getShortName(), this.style);
+      const divs = $(`<div id="overlay"></div><div id="overlay2"></div>`);
+      $("body").append(divs);
+    }
 
-  stop(){
-		BdApi.clearCSS(this.getShortName())
-		$("div.overlay").remove();
-		$("div.overlay2").remove();
-	}
+    stop() {
+      BdApi.clearCSS(this.getShortName())
+      $("div.overlay").remove();
+      $("div.overlay2").remove();
+    }
 
 
 
-};
+  };
 
-return Plugin
+  return Plugin
 })();
